@@ -1,5 +1,4 @@
 {
-    "startingDate": "17875",
-    "niin": ["11111", "22222", "33333"],
-    "dbFile": "DRPSim.sqlite"
+    "Sim_ID": "cbdfe982-26fc-4eff-9358-8dcb319e7fdf",
+    "DatabaseFile": "DRPSim.sqlite"
 }

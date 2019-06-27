@@ -20,6 +20,7 @@ import java.util.List;
 public class TestParse2 {
 
     private static final Logger LOGGER = Logger.getLogger(TestParse2.class.getName());
+
     /**
      * @param args the command line arguments
      */
@@ -30,6 +31,7 @@ public class TestParse2 {
             LOGGER.log(Level.SEVERE, "{0} not found!", inputFile.getAbsolutePath());
             return;
         }
+        System.out.println(inputFile.getAbsoluteFile());
         try {
             FileReader fileReader = new FileReader(inputFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -38,14 +40,16 @@ public class TestParse2 {
             Type type = typeToken.getType();
             Map<String, Object> data = gson.fromJson(bufferedReader, type);
             bufferedReader.close();
-            for (String key: data.keySet()) {
+            for (String key : data.keySet()) {
                 System.out.printf("%s = %s%n", key, data.get(key));
             }
-            List<String> niins = (List)data.get("niin");
-            if (niins.size() == 1 && niins.get(0).equalsIgnoreCase("ALL")) {
-                System.out.println("Process ALL NIINS");
-            } else {
-                System.out.printf("Process these NIINS: %s%n", niins);
+            if (data.containsKey("families")) {
+                List<String> families = (List<String>) data.get("families");
+                if (families.size() == 1 && families.get(0).equalsIgnoreCase("ALL")) {
+                    System.out.println("Process ALL Families");
+                } else {
+                    System.out.printf("Process these Families: %s%n", families);
+                }
             }
 //            System.out.println(value.getClass());
         } catch (FileNotFoundException ex) {
@@ -54,7 +58,7 @@ public class TestParse2 {
             Logger.getLogger(TestParse2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private static class MapTypeToken extends TypeToken<Map<String, Object>> {
     }
 

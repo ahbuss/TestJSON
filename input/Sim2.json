@@ -1,5 +1,5 @@
 {
     "startingDate": "17875",
-    "niin": ["ALL"],
+    "families": ["ALL"],
     "dbFile": "DRPSim.sqlite"
 }

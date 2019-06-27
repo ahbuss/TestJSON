@@ -1,0 +1,15 @@
+[{
+"DatabaseFile":"input/WIOMWork.SQLite",
+"Sim_ID":"385004bb-24e3-49ab-bbde-633720acb016",
+"Data_Dictionary_ID":"efadfdda-5193-11e9-af3e-e30da88c27d4",
+"verbose":"true",
+"console":"output.txt",
+"verbose_level":"1"},
+{
+"DatabaseFile":"input/WIOMWork.SQLite",
+"Sim_ID":"385004bb-24e3-49ab-bbde-633720acb016",
+"Data_Dictionary_ID":"efadfdda-5193-11e9-af3e-e30da88c27d4",
+"verbose":"false",
+"console":"output1.txt",
+"verbose_level":"2"}
+]
