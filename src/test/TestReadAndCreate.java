@@ -48,6 +48,8 @@ public class TestReadAndCreate {
 
         }
         System.out.println("Success!");
+        String scenarioString = gson.toJson(scenario2);
+        System.out.println(scenarioString);
     }
 
     private static class Scenario {
@@ -58,7 +60,12 @@ public class TestReadAndCreate {
         private boolean verbose;
         private String console;
         private int verbose_level;
+        protected String message;
 
+        public Scenario() {
+            this.message = "No Message (yet)";
+        }
+        
         /**
          * @return the DatabaseFile
          */
@@ -141,6 +148,20 @@ public class TestReadAndCreate {
          */
         public void setVerbose_level(int verbose_level) {
             this.verbose_level = verbose_level;
+        }
+
+        /**
+         * @return the message
+         */
+        public String getMessage() {
+            return message;
+        }
+
+        /**
+         * @param message the message to set
+         */
+        public void setMessage(String message) {
+            this.message = message;
         }
 
     }
